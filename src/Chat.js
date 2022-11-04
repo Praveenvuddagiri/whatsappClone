@@ -1,6 +1,6 @@
 import { MoreVert, SearchOutlined } from '@mui/icons-material';
 import { Avatar, IconButton } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './Chat.css';
 import MicIcon from '@mui/icons-material/Mic';
 import axios from './axios';
@@ -52,7 +52,7 @@ function Chat({ messages, clearWindow}) {
       </div>
       <div className='chat__body'>
         {messages.map((message) => (
-          <p className={`chat__message ${message.name == user.displayName && 'chat__reciever'}`}>
+          <p className={`chat__message ${message.name === user.displayName && 'chat__reciever'}`}>
             <span className='chat__name'>{message.name}</span>
             {message.message}
             <span className='chat__timestamp'>
